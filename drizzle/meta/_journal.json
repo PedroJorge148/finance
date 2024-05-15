@@ -8,6 +8,13 @@
       "when": 1715801608363,
       "tag": "0000_parallel_adam_warlock",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1715803009346,
+      "tag": "0001_graceful_bruce_banner",
+      "breakpoints": true
     }
   ]
 }
