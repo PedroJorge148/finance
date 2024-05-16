@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
+import { QueryProvider } from '@/providers/query-provider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -28,7 +29,7 @@ export default function RootLayout({
             fontSans.variable,
           )}
         >
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </body>
       </html>
     </ClerkProvider>
