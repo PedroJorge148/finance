@@ -1,19 +1,12 @@
 {
-  "version": "5",
-  "dialect": "pg",
+  "version": "6",
+  "dialect": "postgresql",
   "entries": [
     {
       "idx": 0,
-      "version": "5",
-      "when": 1715801608363,
-      "tag": "0000_parallel_adam_warlock",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1715803009346,
-      "tag": "0001_graceful_bruce_banner",
+      "version": "6",
+      "when": 1715880756254,
+      "tag": "0000_broad_synch",
       "breakpoints": true
     }
   ]

@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 import { QueryProvider } from '@/providers/query-provider'
+import { SheetProvider } from '@/providers/sheet-provider'
+import { Toaster } from 'sonner'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -29,7 +31,11 @@ export default function RootLayout({
             fontSans.variable,
           )}
         >
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            <SheetProvider />
+            {children}
+            <Toaster richColors closeButton />
+          </QueryProvider>
         </body>
       </html>
     </ClerkProvider>

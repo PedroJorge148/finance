@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:3000/api
+
+# @name get_accounts
+GET {{baseUrl}}/hello
+Content-Type: application/json
+
+###
+
+# @name create_account
+POST {{baseUrl}}/hello
+Content-Type: application/json
+
+{
+  "name": "test"
+}
