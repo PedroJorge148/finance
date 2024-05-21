@@ -44,6 +44,10 @@ export function AccountForm({
     onSubmit(values)
   }
 
+  function handleDelete() {
+    onDelete?.()
+  }
+
   return (
     <Form {...form}>
       <form
@@ -76,7 +80,7 @@ export function AccountForm({
             variant="outline"
             className="w-full"
             disabled={disabled}
-            onClick={onDelete}
+            onClick={handleDelete}
           >
             <Trash className="mr-2 size-4" />
             Delete account

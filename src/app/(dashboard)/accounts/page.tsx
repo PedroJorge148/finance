@@ -2,13 +2,13 @@
 
 import { DataTable } from '@/components/data-table'
 import { Button } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Skeleton } from '@/components/ui/skeleton'
 
 import { useBulkDeleteAccounts } from '@/features/accounts/api/use-balk-delete'
-import { useGetAccounts } from '@/features/accounts/api/use-get-accounts'
 import { useNewAccount } from '@/features/accounts/hooks/use-new-account'
 
+import { useGetAccounts } from '@/features/accounts/api/use-get-accounts'
 import { Loader2, Plus } from 'lucide-react'
 import { columns } from './columns'
 
@@ -49,7 +49,7 @@ export default function AccountsPage() {
         </CardHeader>
         <CardContent>
           <DataTable
-            filterKey=""
+            filterKey="name"
             columns={columns}
             data={accounts}
             onDelete={(row) => {
