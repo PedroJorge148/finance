@@ -5,7 +5,7 @@ import { client } from '@/lib/hono'
 export function useGetCategory(id?: string) {
   const query = useQuery({
     enabled: !!id,
-    queryKey: ['category', id],
+    queryKey: ['category', { id }],
     queryFn: async () => {
       const response = await client.api.categories[':id'].$get({
         param: { id },
