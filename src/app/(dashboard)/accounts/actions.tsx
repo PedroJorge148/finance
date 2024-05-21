@@ -19,7 +19,7 @@ interface ActionsProps {
 export function Actions({ id }: ActionsProps) {
   const [ConfirmDialog, confirm] = useConfirm(
     'Are you sure?',
-    'You are about to delete this transaction.',
+    'You are about to delete this account.',
   )
 
   const { onOpen } = useOpenAccount()
