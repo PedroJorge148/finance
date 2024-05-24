@@ -23,6 +23,7 @@ export function AmountInput({ value, onChange, placeholder, disabled }: Props) {
 
   function onReverseValue() {
     if (!value) return
+
     const newValue = parseFloat(value) * -1
     onChange(newValue.toString())
   }

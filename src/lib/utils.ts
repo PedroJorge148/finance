@@ -6,9 +6,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function convertAmountFromCents(amount: number) {
-  return Math.round(amount / 100)
+  return amount / 100
 }
 
 export function convertAmountToCents(amount: number) {
-  return Math.round(amount * 100)
+  return amount * 100
+}
+
+export function formatCurrency(value: number) {
+  return Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+  }).format(value)
 }

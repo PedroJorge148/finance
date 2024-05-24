@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { client } from '@/lib/hono'
+import { convertAmountFromCents } from '@/lib/utils'
 import { useSearchParams } from 'next/navigation'
 
 export function useGetTransactions() {
@@ -27,7 +28,10 @@ export function useGetTransactions() {
       }
 
       const { data } = await response.json()
-      return data
+      return data.map((transaction) => ({
+        ...transaction,
+        amountInCents: convertAmountFromCents(transaction.amountInCents),
+      }))
     },
   })
 

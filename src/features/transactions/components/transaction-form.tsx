@@ -24,7 +24,7 @@ const formSchema = z.object({
   accountId: z.string(),
   categoryId: z.string().nullable().optional(),
   payee: z.string(),
-  amount: z.string(),
+  amountInCents: z.string(),
   notes: z.string().nullable().optional(),
 })
 
@@ -65,7 +65,7 @@ export function TransactionForm({
   })
 
   function handleSubmit(values: FormValues) {
-    const amount = parseFloat(values.amount)
+    const amount = parseFloat(values.amountInCents)
     const amountInCents = convertAmountToCents(amount)
 
     onSubmit({
@@ -157,7 +157,7 @@ export function TransactionForm({
         />
         <FormField
           control={form.control}
-          name="amount"
+          name="amountInCents"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Amount</FormLabel>
