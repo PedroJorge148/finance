@@ -47,19 +47,19 @@ const app = new Hono()
           id: transactions.id,
           date: transactions.date,
           category: categories.name,
-          categoryId: transactions.categoryId,
+          categoryId: categories.id,
           payee: transactions.payee,
           amountInCents: transactions.amountInCents,
           notes: transactions.notes,
           account: accounts.name,
-          accountId: transactions.accountId,
+          accountId: accounts.id,
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))
         .leftJoin(categories, eq(transactions.categoryId, categories.id))
         .where(
           and(
-            accountId ? eq(transactions.accountId, accountId) : undefined,
+            accountId! ? eq(transactions.accountId, accountId) : undefined,
             eq(accounts.userId, auth.userId),
             gte(transactions.date, startDate),
             lte(transactions.date, endDate),
@@ -99,11 +99,11 @@ const app = new Hono()
           payee: transactions.payee,
           amountInCents: transactions.amountInCents,
           notes: transactions.notes,
-          accountId: transactions.accountId,
+          accountId: accounts.id,
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))
-        .where(and(eq(transactions.id, id), eq(accounts.id, auth.userId)))
+        .where(and(eq(transactions.id, id), eq(accounts.userId, auth.userId)))
 
       if (!data) {
         return c.json({ error: 'Not found.' }, 404)
@@ -261,10 +261,12 @@ const app = new Hono()
         .where(
           inArray(
             transactions.id,
-            sql`(select if from ${transactionsToUpdate})`,
+            sql`(select * from ${transactionsToUpdate})`,
           ),
         )
         .returning()
+
+      console.log(data)
 
       if (!data) {
         return c.json({ error: 'Not found.' }, 404)
