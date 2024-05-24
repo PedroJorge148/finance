@@ -15,6 +15,13 @@
       "when": 1716317203954,
       "tag": "0001_dark_scorpion",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716321123613,
+      "tag": "0002_left_norman_osborn",
+      "breakpoints": true
     }
   ]
 }
