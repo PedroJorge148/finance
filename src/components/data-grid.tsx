@@ -48,6 +48,7 @@ export function DataGrid() {
         value={data?.expensesAmount}
         percentageChange={data?.expensesChange}
         icon={FaArrowTrendDown}
+        inverted
         dateRange={dateRangeLabel}
       />
     </div>
