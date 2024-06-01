@@ -20,7 +20,7 @@ export function useCreateTransaction() {
     onSuccess: () => {
       toast.success('Transaction created!')
       queryClient.invalidateQueries({ queryKey: ['transactions'] })
-      // TODO: Invalidate summary
+      queryClient.invalidateQueries({ queryKey: ['summary'] })
     },
     onError: (e) => {
       console.error(e)
