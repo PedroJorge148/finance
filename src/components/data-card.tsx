@@ -47,7 +47,7 @@ interface DataCardProps extends BoxVariants, IconVariants {
   title: string
   value?: number
   dateRange: string
-  inverted?: boolean
+  invertedColors?: boolean
   percentageChange?: number
 }
 
@@ -57,7 +57,7 @@ export function DataCard({
   value = 0,
   dateRange,
   variant,
-  inverted = false,
+  invertedColors = false,
   percentageChange = 0,
 }: DataCardProps) {
   return (
@@ -88,8 +88,8 @@ export function DataCard({
             'line-clamp-1 text-sm text-muted-foreground',
             percentageChange > 0 && 'text-emerald-500',
             percentageChange < 0 && 'text-rose-500',
-            inverted && percentageChange < 0 && 'text-emerald-500',
-            inverted && percentageChange > 0 && 'text-rose-500',
+            invertedColors && percentageChange < 0 && 'text-emerald-500',
+            invertedColors && percentageChange > 0 && 'text-rose-500',
           )}
         >
           {formatPercentage(percentageChange, { addPrefix: true })} from last

@@ -41,6 +41,7 @@ export function DataGrid() {
         value={data?.incomeAmount}
         percentageChange={data?.incomeChange}
         icon={FaArrowTrendUp}
+        variant="success"
         dateRange={dateRangeLabel}
       />
       <DataCard
@@ -48,8 +49,9 @@ export function DataGrid() {
         value={data?.expensesAmount}
         percentageChange={data?.expensesChange}
         icon={FaArrowTrendDown}
-        inverted
+        variant="danger"
         dateRange={dateRangeLabel}
+        invertedColors
       />
     </div>
   )
