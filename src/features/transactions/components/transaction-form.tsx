@@ -162,11 +162,7 @@ export function TransactionForm({
             <FormItem>
               <FormLabel>Amount</FormLabel>
               <FormControl>
-                <AmountInput
-                  {...field}
-                  disabled={disabled}
-                  placeholder="0.00"
-                />
+                <AmountInput {...field} disabled={disabled} />
               </FormControl>
             </FormItem>
           )}
