@@ -1,4 +1,4 @@
-# ⏲💰 Finance App
+# 💰 Finance App
 Your partner for you finance health 💚
 
 ![Finance App](/.github/screenshots/cover.png "Finance App")
